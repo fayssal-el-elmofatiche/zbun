@@ -1,0 +1,8 @@
+# questions:
+#   - name: name
+
+bundle_name:
+  type: str
+  help: What is your bundle name?
+
+
