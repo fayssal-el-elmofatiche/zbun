@@ -38,7 +38,7 @@ def bundles():
 def new():
     """Create scafold for a new zipline data bundle."""
     # create a project from a local path
-    run_copy("./bundle_template", "./new_bundle")
+    run_copy("./bundle_template")
    
 
 @app.command()
