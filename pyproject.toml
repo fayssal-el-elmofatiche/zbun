@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "zbundler"
+name = "zbun"
 version = "0.1.0"
 description = ""
 authors = ["Fayssal El Mofatiche <fayssal.elmofatiche@dnbf.tech>"]
