@@ -44,7 +44,7 @@ def bundles():
 def new():
     """Create scafold for a new zipline data bundle."""
     # create a project from a local path
-    run_copy("./bundle_template")
+    run_copy("git+https://github.com/fayssalelmofatiche/zbun_template.git")
    
 
 @app.command()
