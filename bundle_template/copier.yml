@@ -5,4 +5,9 @@ bundle_name:
   type: str
   help: What is your bundle name?
 
+calendar_name:
+  type: str
+  help: What is your calendar name, e.g. NYSE?
+  default: NYSE
+
 

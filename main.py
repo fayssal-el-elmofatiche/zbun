@@ -11,6 +11,7 @@ app = typer.Typer()
 
 # import zipline modules
 from zipline.data import bundles as bundles_module
+from zipline.utils.calendar_utils import get_calendar_names
 
 DEFAULT_BUNDLE = "quandl"
 
@@ -49,6 +50,12 @@ def delete(bundle_name, bundle_data):
 
     # return the bundle data
     return bundle_data
+
+@app.command()
+def calendars():
+    """List all of the available trading calendars."""
+    for name in sorted(get_calendar_names()):
+        print(name)
 
 if __name__ == '__main__':
     app()
