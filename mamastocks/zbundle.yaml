@@ -1,0 +1,8 @@
+
+version: 1
+remove_existing_bundles: False
+
+bundle:
+    name: mamastocks
+    calendar: NYSE
+    module: mamastocks.dataprep

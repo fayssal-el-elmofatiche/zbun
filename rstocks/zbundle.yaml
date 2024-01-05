@@ -1,0 +1,8 @@
+
+version: 1
+remove_existing_bundles: False
+
+bundle:
+    name: rstocks
+    calendar: NYSE
+    module: rstocks.dataprep

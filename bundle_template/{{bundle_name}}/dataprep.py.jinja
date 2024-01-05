@@ -4,7 +4,13 @@ from os import listdir
 print("Processing data for {{bundle_name}}!")
 
 # Change the path to where you have your data
-path = './data/random_stocks'
+path = './data/'
+
+"""
+test function to check if module is loaded correctly
+"""
+def test_module():
+    print("Module has been loaded successfully!")
 
 """
 test function to check if the data is loaded correctly
@@ -18,7 +24,7 @@ def test_load():
 The ingest function needs to have this exact signature,
 meaning these arguments passed, as shown below.
 """
-def random_stock_data(environ, # Zipline specific environment object
+def process_data(environ, # Zipline specific environment object
                   asset_db_writer, # Writes the assets to the asset database
                   minute_bar_writer, # Writes the minute bars to the minute database
                   daily_bar_writer, # Writes the daily bars to the daily database
@@ -71,7 +77,7 @@ def random_stock_data(environ, # Zipline specific environment object
     
     # Get data for all stocks and write to Zipline
     daily_bar_writer.write(
-            process_stocks(symbols, sessions, metadata, divs)
+            process_symbols(symbols, sessions, metadata, divs)
             )
 
     # Write the metadata
@@ -87,7 +93,7 @@ Generator function to iterate stocks,
 build historical data, metadata 
 and dividend data
 """
-def process_stocks(symbols, sessions, metadata, divs):
+def process_symbols(symbols, sessions, metadata, divs):
     # Loop the stocks, setting a unique Security ID (SID)
     for sid, symbol in enumerate(symbols):
         
@@ -135,6 +141,6 @@ def process_stocks(symbols, sessions, metadata, divs):
             div.set_index(ind, inplace=True)
             
             # Append this stock's dividends to the list of all dividends
-            divs = divs.append(div)    
+            divs = pd.concat([divs, div])  
             
         yield sid, df
