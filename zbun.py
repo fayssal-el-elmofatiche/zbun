@@ -106,11 +106,11 @@ def ingest(bundle_dir: str = typer.Option(".", "--dir", "-d", help="The director
     register(bundle_name, module.process_data, calendar_name=bundle_calendar)
 
     # ingest the bundle
-    print(f"Ingesting bundle {bundle_name}")
-    bundles_module.ingest(bundle_name)
+    #print(f"Ingesting bundle {bundle_name}")
+    #bundles_module.ingest(bundle_name)
 
     # list bundles
-    #bundles()
+    bundles()
 
 if __name__ == '__main__':
     app()
