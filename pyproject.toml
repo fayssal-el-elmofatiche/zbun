@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "zbun"
+version = "0.1.0"
+description = ""
+authors = ["Fayssal El Mofatiche <fayssal.elmofatiche@dnbf.tech>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+zipline-reloaded = "^3.0.3"
+typer = {extras = ["all"], version = "^0.9.0"}
+copier = "^9.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

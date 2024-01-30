@@ -1,0 +1,8 @@
+
+version: 1
+remove_existing_bundles: False
+
+bundle:
+    name: stocks2
+    calendar: NYSE
+    module: stocks2.stocks2
